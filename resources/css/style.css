@@ -1,0 +1,83 @@
+/* Basic layout and styles for header, nav and sections */
+:root{
+  --accent:#2b7a78;
+  --muted:#666;
+  --bg:#fff;
+    --header-height:64px;
+  /* make footer occupy the bottom 200px of the viewport */
+  --footer-height:200px;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;margin:0;background:var(--bg);color:#111}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid #e6e6e6}
+/* sticky header */
+ .site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:var(--bg);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+ }
+.site-brand h1{font-size:1.25rem;margin:0;color:var(--accent)}
+.main-nav{display:flex;gap:.5rem}
+.main-nav .nav-btn{background:transparent;border:1px solid transparent;padding:.45rem .75rem;border-radius:6px;cursor:pointer;font-weight:600}
+.main-nav .nav-btn:hover{background:#f2f7f7}
+.main-nav .nav-btn:focus{outline:2px solid rgba(43,122,120,.2);outline-offset:2px}
+
+.content-section{display:none;padding:1.25rem}
+.content-section.active{display:block}
+.content-section img{max-width:220px;height:auto;display:block;margin:0.5rem 0}
+
+/* Technology grid (skills) */
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+.tech-card{
+  background: #f8faf9;
+  border-radius:8px;
+  padding:0.75rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  box-shadow: 0 1px 3px rgba(16,24,40,0.04);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.tech-card:focus,
+.tech-card:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(16,24,40,0.08);outline:none}
+.tech-logo{width:56px;height:56px;object-fit:contain;margin-bottom:0.5rem}
+.tech-name{font-weight:600;color:#222;font-size:0.95rem}
+
+.site-footer{border-top:1px solid #e6e6e6;padding:1rem}
+/* sticky footer */
+ .site-footer{
+  /* fixed to bottom and sized to the footer-height variable */
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  height:var(--footer-height);
+  z-index:1000;
+  background:var(--bg);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  overflow-y:auto; /* allow scrolling if footer content is taller than 200px */
+ }
+
+/* Ensure main content isn't hidden under header/footer */
+main{padding-top:var(--header-height);padding-bottom:var(--footer-height)}
+.site-footer ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+.site-footer a{color:var(--accent);text-decoration:none}
+
+/* Responsive tweaks */
+@media (max-width:560px){
+  .site-header{flex-direction:column;align-items:flex-start;gap:.75rem}
+  .main-nav{flex-wrap:wrap}
+}

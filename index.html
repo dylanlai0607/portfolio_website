@@ -5,8 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dylan's Portfolio Website</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+    <meta name="description" content="Dylan Lai - portfolio showcasing projects, skills and hobbies">
 </head>
 <body>
-    
+    <header class="site-header">
+        <div class="site-brand">
+            <h1>Dylan Lai</h1>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <button class="nav-btn" data-target="about" aria-controls="about">About Me</button>
+            <button class="nav-btn" data-target="projects" aria-controls="projects">Projects</button>
+            <button class="nav-btn" data-target="skills" aria-controls="skills">Skills</button>
+            <button class="nav-btn" data-target="hobbies" aria-controls="hobbies">Hobbies</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <img alt="Portrait of Dylan" src="resources/images/placeholder.png">
+            <p>Write a short summary about yourself here.</p>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2>Projects</h2>
+            <p>Project list will go here.</p>
+        </section>
+
+        <section id="skills" class="content-section">
+            <h2>Skills</h2>
+            <p>Technical skills and tools you use.</p>
+
+            <div class="tech-grid" role="list" aria-label="Technologies">
+                <div class="tech-card" role="listitem" tabindex="0">
+                    <img class="tech-logo" src="resources/images/github.png" alt="GitHub logo">
+                    <div class="tech-name">GitHub</div>
+                </div>
+
+                <div class="tech-card" role="listitem" tabindex="0">
+                    <img class="tech-logo" src="resources/images/html.png" alt="HTML logo">
+                    <div class="tech-name">HTML</div>
+                </div>
+
+                <div class="tech-card" role="listitem" tabindex="0">
+                    <img class="tech-logo" src="resources/images/css.png" alt="CSS logo">
+                    <div class="tech-name">CSS</div>
+                </div>
+
+                <div class="tech-card" role="listitem" tabindex="0">
+                    <img class="tech-logo" src="resources/images/python.png" alt="Python logo">
+                    <div class="tech-name">Python</div>
+                </div>
+
+                <div class="tech-card" role="listitem" tabindex="0">
+                    <img class="tech-logo" src="resources/images/javascript.png" alt="JavaScript logo">
+                    <div class="tech-name">JavaScript</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hobbies" class="content-section">
+            <h2>Hobbies</h2>
+            <p>What you enjoy outside of work or school.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <ul>
+            <li><a href="#">GitHub (placeholder)</a></li>
+            <li>Phone: (your number)</li>
+            <li>Email: <a href="mailto:you@example.com">you@example.com</a></li>
+            <li><a href="#">Resume (placeholder)</a></li>
+        </ul>
+    </footer>
+
+<script src="script.js" defer></script>
+
 </body>
 </html>
